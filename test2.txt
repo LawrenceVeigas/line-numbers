@@ -1,0 +1,23 @@
+1   extern crate futures;
+2   extern crate futures_util;
+3   
+4   use futures::prelude::*;
+5   use futures::executor::LocalPool;
+6   use futures::task::{Context, LocalMap, Wake, Waker};
+7   use futures_util::lock::BiLock;
+8   
+9   use std::sync::Arc;
+10  
+11  struct FakeWaker;
+12  impl Wake for FakeWaker {
+13    fn wake(_: &Arc<Self>) {}
+14  }
+15  
+16  struct Reader<T> {
+17    lock: BiLock<T>,
+18  }
+19  
+20  struct Writer<T> {
+21    lock: BiLock<T>,
+22  }
+23  
