@@ -36,17 +36,14 @@ with open("test.txt", "r") as obj:
             if(count==1):
                 # If line number is a single digit number, add 3 spaces
                 to_write = str(n) + "   " +string_to_attach
-                print("m here now")
 
             if(count==2):
-                # If line number is a single digit number, add 2 spaces
+                # If line number is a double digit number, add 2 spaces
                 to_write = str(n) + "  " + string_to_attach
-                print("now count is 2")
 
             if(count==3):
-                # If line number is a single digit number, add 1 space
+                # If line number is a triple digit number, add 1 space
                 to_write = str(n) + " " + string_to_attach
-                print("now count is 3")
 
             to_display += to_write
             obj2.write(to_write)
